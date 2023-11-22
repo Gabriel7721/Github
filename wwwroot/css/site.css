@@ -1,0 +1,178 @@
+﻿/* General settings */
+html {
+    font-size: 14px;
+    position: relative;
+    min-height: 100%;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+body {
+    margin-bottom: 60px;
+    background-color: #f5f5f5;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex; /* Added for the sticky footer */
+    min-height: 100vh; /* Added for the sticky footer */
+    flex-direction: column; /* Added for the sticky footer */
+}
+
+/* Header and titles */
+h1 {
+    text-align: center;
+    margin-bottom: 50px;
+    color: #333;
+}
+
+/* Form styling */
+form {
+    background-color: #ffffff;
+    max-width: 400px;
+    margin: auto;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px 0px #000000;
+}
+
+input[type="text"],
+input[type="password"],
+.news-form input[type="text"],
+.news-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px; /* Adjusted to be consistent */
+    box-sizing: border-box; /* Removed in case of redundancy */
+}
+
+.news-form textarea {
+    height: 200px;
+}
+
+input[type="submit"],
+.news-form input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 5px;
+    transition: background-color 0.3s; /* Standardized transition */
+}
+
+    input[type="submit"]:hover,
+    .news-form input[type="submit"]:hover {
+        background-color: #45a049;
+    }
+
+label {
+    color: #333;
+}
+
+/* Newspaper-like layout */
+.news-article-container {
+    padding: 20px 0;
+    border-bottom: 1px solid #d3d3d3;
+}
+
+.news-article-headline {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0 0 10px 0;
+}
+
+.news-article-content {
+    margin: 0;
+    font-size: 16px;
+    text-align: justify;
+}
+
+/* Link styles */
+a,
+.news-back-link,
+.back-to-admin-link {
+    color: #0077cc;
+    text-decoration: none;
+    display: inline-block; /* Common property */
+    font-weight: bold; /* Common property */
+}
+
+    a:hover,
+    .news-back-link:hover,
+    .back-to-admin-link:hover {
+        text-decoration: underline;
+    }
+
+.back-to-admin-link {
+    margin-top: 20px;
+}
+
+/* Footer */
+.footer {
+    background-color: #f8f9fa;
+    padding: 10px 0;
+}
+
+    .footer a {
+        color: #007bff;
+    }
+
+/* Định dạng cho textarea */
+textarea {
+    width: 100%; /* Chiều rộng tối đa */
+    height: 300px; /* Chiều cao cố định - bạn có thể điều chỉnh con số này tùy ý */
+    padding: 12px 20px; /* Đệm bên trong */
+    box-sizing: border-box; /* Đảm bảo padding không làm tăng kích thước tổng thể */
+    border: 2px solid #ccc; /* Đường viền xung quanh */
+    border-radius: 4px; /* Góc bo tròn */
+    background-color: #f8f8f8; /* Màu nền */
+    resize: none; /* Tắt chức năng thay đổi kích thước */
+    font-size: 14px; /* Kích thước phông chữ */
+    margin-bottom: 16px; /* Khoảng cách ở dưới */
+}
+
+/* Định dạng cho các nút chỉnh sửa và xóa */
+.btn-small {
+    padding: 12px 166px; /* Nhỏ gọn hơn */
+    font-size: 12px; /* Phông chữ nhỏ */
+    border-radius: 5px; /* Góc cạnh tròn nhẹ */
+    line-height: 0.5; /* Điều chỉnh dòng chữ */
+    margin: 3px; /* Khoảng cách giữa các nút */
+}
+
+/* Màu sắc và hiệu ứng cho nút Delete */
+.btn-danger {
+    color: #fff;
+    background-color: #dc3545; /* Màu đỏ */
+    border: none; /* Loại bỏ viền */
+}
+
+    .btn-danger:hover {
+        background-color: #c82333; /* Màu đậm hơn khi rê chuột */
+    }
+
+/* Màu sắc và hiệu ứng cho nút Edit */
+.btn-secondary {
+    color: #fff;
+    background-color: #6c757d; /* Màu xám */
+    border: none; /* Loại bỏ viền */
+}
+
+    .btn-secondary:hover {
+        background-color: #5a6268; /* Màu đậm hơn khi rê chuột */
+    }
+
+
+.pagination-container {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+/* Thêm các styles khác cho .pagination nếu bạn muốn tùy chỉnh giao diện */

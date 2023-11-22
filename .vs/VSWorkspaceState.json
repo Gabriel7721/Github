@@ -1,0 +1,13 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\bin",
+    "\\Controllers",
+    "\\Models",
+    "\\Views",
+    "\\Views\\Home",
+    "\\Views\\News"
+  ],
+  "SelectedNode": "\\Views\\News\\ShowAll.cshtml",
+  "PreviewInSolutionExplorer": false
+}

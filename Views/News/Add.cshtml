@@ -1,0 +1,35 @@
+﻿@model News
+@{
+    Layout = "_Layout";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Add</title>
+</head>
+<body>
+    <h1>Add new news</h1>
+    <form asp-action="Add" method="post">
+        <div>
+            <label asp-for="HeadLine">HeadLine</label>
+            <input asp-for="HeadLine" type="text" name="headline" />
+        </div>
+        <div>
+            <label asp-for="ContentOfNews">ContentOfNews</label>
+            <textarea asp-for="ContentOfNews" class="form-control" name="contentofnews"></textarea>
+
+        </div>
+        <div>
+            <input type="submit" value="Create" />
+        </div>
+    </form>
+    <h4>
+        <a asp-action="Admin">
+            Back to admin page
+        </a>
+    </h4>
+</body>
+</html>

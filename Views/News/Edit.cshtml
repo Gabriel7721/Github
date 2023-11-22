@@ -1,0 +1,35 @@
+﻿@model News
+
+@{
+    Layout = "_Layout";
+}
+
+<h1>Edit News</h1>
+
+<!-- Hiển thị form với thông tin tin tức hiện tại -->
+<form asp-action="Edit" method="post">
+    <input type="hidden" asp-for="NewsId" />
+    <div class="form-group">
+        <label asp-for="HeadLine" class="control-label"></label>
+        <input asp-for="HeadLine" class="form-control" />
+        <span asp-validation-for="HeadLine" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="ContentOfNews" class="control-label"></label>
+        <textarea asp-for="ContentOfNews" class="form-control"></textarea>
+        <span asp-validation-for="ContentOfNews" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Save changes" class="btn btn-primary" />
+    </div>
+</form>
+
+<div>
+    <a asp-action="ShowAll">Back to list</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

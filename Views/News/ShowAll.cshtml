@@ -1,0 +1,64 @@
+﻿@model PaginatedList<News>
+
+@{
+    Layout = "_Layout";
+    var successMessage = TempData["SuccessMessage"] as string;
+}
+
+@if (!string.IsNullOrEmpty(successMessage))
+{
+    <div class="alert alert-success">@successMessage</div>
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ShowAll</title>
+</head>
+<body>
+    <h1>SHOW ALL NEWS</h1>
+    <div>
+        @foreach (var item in Model.Items) // Chú ý: sử dụng Model.Items, không phải Model
+        {
+            <div class="news-article-container">
+                <p class="news-article-headline">@Html.DisplayFor(modelItem => item.HeadLine)</p> <!-- Chỉnh sửa tại đây -->
+                <p class="news-article-content">@Html.DisplayFor(modelItem => item.ContentOfNews)</p> <!-- Chỉnh sửa tại đây -->
+            </div>
+
+            <div>
+                <!-- Thêm nút Xóa tại đây -->
+                <form asp-action="Delete" method="post" class="action-buttons">
+                    <input type="hidden" name="id" value="@item.NewsId" />
+                    <input type="submit" value="Delete" class="btn btn-danger btn-small" onclick="return confirm('Bạn có chắc rằng muốn xóa vĩnh viễn tin tức này chứ?');" />
+                    <a asp-action="Edit" asp-route-id="@item.NewsId" class="btn btn-secondary btn-small">Edit</a>
+                </form>
+            </div>
+        }
+    </div>
+
+    <h4> 
+        <a class="news-back-link" asp-action="Admin">Back to admin page</a> 
+    </h4> 
+
+    <!-- Phần hiển thị nút phân trang --> 
+    <div class="pagination-container"> 
+        <nav aria-label="News pages navigation"> 
+            <ul class="pagination"> 
+                <li class="page-item @(Model.HasPreviousPage ? "" : "disabled")"> 
+                    <a class="page-link" asp-action="ShowAll" asp-route-page="@(Model.PageIndex - 1)">Previous</a> 
+                </li> 
+                @for (var i = 1; i <= Model.TotalPages; i++) 
+                { 
+                    <li class="page-item @(i == Model.PageIndex ? "active" : "")"> 
+                        <a class="page-link" asp-action="ShowAll" asp-route-page="@i">@i</a> 
+                    </li> 
+                } 
+                <li class="page-item @(Model.HasNextPage ? "" : "disabled")"> 
+                    <a class="page-link" asp-action="ShowAll" asp-route-page="@(Model.PageIndex + 1)">Next</a> 
+                </li> 
+            </ul> 
+        </nav> 
+    </div> 
+</body> 
+</html>
